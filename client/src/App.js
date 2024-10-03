@@ -1,33 +1,25 @@
 import './App.css';
-import axios from 'axios';
-import { useEffect, useState} from 'react';
+import {BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import GenerateTrip from './pages/GenerateTrip';
+
 
 function App() {
 
-  const [listOfTrips, setListOfTrips] = useState([]);
-
-
-  useEffect(() => {
-    axios.get("http://localhost:3002/trips").then((response) => {
-      setListOfTrips(response.data); //save data received into listOfTrips
-    });
-
-  }, []);
 
   return (
     <div className="App">
-      {listOfTrips.map( (value, key) => {
-        return <div className='trip'>
-          <div className='trip-id'>  {"Trip ID: "}{value.id}  </div>
-          <div className='trip-body'>  
-            <div className='trip-city'>  {"City: "}{value.city}  </div>
-            <div className='trip-flight'>  {"Flight: "}{value.flight_number}  </div>
-            <div className='trip-date'>  {"Date: "}{value.arrival_date}  </div>
-            <div className='trip-duration'>  {"Duration: "}{value.duration}{" days"}  </div>
-            <div className='trip-price'>  {"Price: "}{value.price}{" "}{value.currency}  </div>
-          </div>
-          </div>
-      })}
+      <Router>
+        <Link to="/">Home</Link>
+        <Link to="/generateTrip">Generate A Trip</Link>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/generateTrip" element={<GenerateTrip />} />
+          
+        </Routes>
+      </Router>
+
+
     </div>
   );
 }

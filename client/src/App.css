@@ -1,10 +1,11 @@
 .App {
-  width: 100vw;
+  width: auto;
   height: auto;
   display: flex;
   align-items: center;
   padding-top: 40px;
   flex-direction: column;
+  background-color: #f0f0f0;
 }
 
 body {
@@ -56,4 +57,69 @@ body {
   color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+
+/*
+  GenerateTrip page
+*/
+
+
+
+.generateTripPage {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 170vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generateTripPage h1 {
+  color: dodgerblue;
+  display: flex;
+}
+
+.generate-trip-container {
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  height: auto;
+  padding: 40px;
+  border: 5px solid dodgerblue;
+  border-radius: 20px;
+  background-color: white;
+}
+
+
+.generate-trip-container #gnerate-trip-input {
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.generate-trip-container button {
+  margin-top: 15px;
+  height: 40px;
+  border: none;
+  font-size: large;
+  background-color: lightskyblue;
+  border-radius: 5px;
+  color: white;
+}
+
+.generate-trip-container button:hover {
+  cursor: pointer;
+  background-color: dodgerblue;
+}
+
+span {
+  color: red;
 }
